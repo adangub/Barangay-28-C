@@ -1,0 +1,19 @@
+RewriteEngine on
+
+ErrorDocument 404 /404.html
+
+RewriteRule ^resident residentsummary.php [NC,L]
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^residency registration.php [NC,L]
+RewriteRule ^clearance newClearance.php [NC,L]
+RewriteRule ^announcement newAnnouncement.php [NC,L]
+RewriteRule ^constituents memberList.php [NC,L]
+RewriteRule ^events calendar.php [NC,L]
+RewriteRule ^transactions history.php [NC,L]
+RewriteRule ^fileblotter newBlotter.php [NC,L]
+RewriteRule ^all-blotters blotterList.php [NC,L]
+RewriteRule ^case blottersummary.php [NC,L]
+RewriteRule ^logout logout.php [NC,L]
+RewriteRule ^login login.php [NC,L]
+RewriteRule ^loading logging.php [NC,L]
+RewriteRule ^reports monthlyRep.php [NC,L]

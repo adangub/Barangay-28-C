@@ -1,0 +1,159 @@
+newBlotter
+
+
+NOTE: Do serverside validation checks
+TO FIX:  (PARA MAKITA ANG MGA BUGS, I IMPORT ANG "28c (with records).sql")
+	Ang picture sa residentsummary.php i align right then i offset from the right by mga 20px then magbutang ug FULL NAME naka BOLD sa baba sa pic
+	If equal to 3 or more ang related family sa RESIDENTSUMMARY.PHP, maguba ang format 
+	Please add ajax loader after mag submit ug residency request AND after mag approve/deny. Preferrably mag DIM ang current webpage then loader sa tunga. Very hard.
+	Ayohi ang logout para every page maka logout
+	Ang menu button sa tapad anang "Barangay 28C" needs to function
+	Ang copyright sa baba (kanang green na bar) dapat sa home lang (naapil sya sa residentsummary.php)
+	Ang remember me, should function (login.php)
+	Kailangan i categorize ang sidebar. All requests under sa request dropdown, all viewing under sa Viewing na dropdown. 
+	Expiry sa cookies is 5 minutes
+	View (Residents AND requests) for members ONLY.
+
+
+Note: New Requests, Change NewTransaction in everythingvalidation. And procedure for NEW_TRANSACTION
+
+
+
+
+
+--------------------------------------------------------------------------LOGS---------------------------------------------------------------
+
+--JANUARY 03, 2016 10:34AM--
+		add new employee via website
+		ajax implementation for searching of names
+		limit access to non-employees to specific parts of the website
+		fixed session/cookie not displaying the empid 
+
+
+--JANUARY 01, 2016 08:48PM-12:21AM--
+		NOTES:
+			onHover for login anim
+			needs to change emp_id on insert in announcements table
+		Checked how the year dynamically changes
+		Fixed the 'not being able to logout for every php file existing in the website' bug
+		updated index
+		changed what the stat header shows
+		News & Announcements for viewing pleasure is now fully functioning (with db con) in index.php
+		updated About Us
+		New Announcement php works 
+		added priorities for announcement.php
+
+
+--DECEMBER 31, 2015 11:53AM--
+		NOTES:
+			if an employee's residency is denied, his request (not his resident details) is deleted.
+		fixed sorting for aggregated membersList & requests
+		added label for > 0 requests
+		fixed search mysqli_boolean error
+
+
+--DECEMBER 29, 2015 09:31AM-08:46PM--
+		overhaul
+		added favicon
+		unified tab for constituents & residents
+		pending requests are provided in the list
+		renamed view profile to check profile (just because)
+		dynamic radio buttons in previous requests (residentsummary.php)
+		dynamic radio buttons hidden in requests already approved/denied
+		Add transaction button works 2-way, the first being able to approve any CHOSEN request, the second is just to not mark anything
+		NewTransaction renders like a receipt (or at least similar to http://2.bp.blogspot.com/-ES3N0j_Czjw/UuZb7KTNoWI/AAAAAAAAIjY/iMg40rRPh7c/s1600/Cedula+2014.jpg)
+		Receipt like statement has a payment input type that accepts integers from 5-100,000
+		implemented stored procedure for new transaction
+			procedure checks for 2 conditions, whether or not if the transaction type IS or ISNT a cedula
+	  		Cedula transaction are handled differently (no existing request to based off on) hence it creates a request, then inserts a transaction, finally updating said request to connect with the aforementioned transaction
+			While for the others, it's pretty straightforward, it inserts a new transaction (with already an existing request), then updates that existing request to connect with the new transaction\
+			Easy.
+
+
+--DECEMBER 28, 2015 10:37PM--
+		added new foreign key for requests (payment_id)
+		change stored procedure to insert null for new resident
+		changed rule for previous requests in residentsummary.php to append payment status so officials can check if he has paid for his residency request.
+		changed table 'payments' to 'transactions
+		added transaction status, amount paid, serviced by, and date paid in residentsummary.php
+		changed hex color of .warning in style.css (text: #003366 | bg: #FFDE00)
+		lol nag loop line 347 resident summary.php (bug)
+
+
+--DECEMBER 27, 2015 7:31PM--
+		newTransaction_success.php should get employee_id from cookie
+		should change mysql_real_escape_string to mysqli_real_escape_string
+		change index's resident count to exclude requests
+		add payment status on previous requests (residentsummary.php)
+		new mysql function GET_FULLNAME(id,0) //second argument for initial/full
+
+
+--DECEMBER 27, 2015 1:17PM--
+		NOTES:
+			Only apply autofill for new transactions on Residents
+			Add integer check for integer fields (income, payment)
+
+		working responsive hover table to show existing transactions made
+		Added new Transactions tab
+		same autofill implementation as address in registration.php
+		use SimpleModal for handling events
+
+
+--DECEMBER 26, 2015 12:28 AM - 2:36AM--
+		NOTES:
+			Change Registration Date to Resident Since if user navigated from membersList > residentsummary | Don't change when not resident
+			Add new field on requests table named "Approved/Denied ON"
+			Change HouseHold members and count to search only for APPROVED co-family
+			Limit Related Family. When navigating from viewing residents, they will NOT be able to see their related family's who are on pending approval. When navigating from viewing requests, they will be ABLE to see their related family's who are already APPROVED.
+			Blotter Records, Programs Participated, Transaction Records, Total Paid in residentsummary.php is not functioning. Yet.
+		added Responsive Hover Table (from Director default) - NOT WORKING YET
+		changed verified to cater denied, pending, and approved (for previous requests in residentsummary.php)
+		localized previous requests for Residents only
+		Added button hyperlinks (css) to incorporate hyperlinks on family names on residents with the same household on residentsummary.php (COOL)
+		Fixed 3rd Note of this day
+		Renamed to: Household Count (from household members), Household Members (from related family)
+		Separated Household Info from Barangay Information
+		Fixed 5th note for this day 
+			
+
+--DECEMBER 25,2015 8:34 PM--
+		added search function both on membersList.php and requestPending.php
+
+
+--DECEMBER 25, 2015 12:43 PM--
+		renamed requestPending_confirm to residentSummary.php for versatility
+ 		view request and view resident buttons redirect to residentSummary for different functions
+		only view residents have one button now
+		approve and deny dynamically created from View Requests
+		one function on javascript to handle approve/deny request	
+		added checks for existing usernames
+
+
+--DECEMBER 24, 2015 XX:XX XX--
+		BUGS: if related family > 3, overflow | css for image
+		fixed trailing whitespace on autofill (/span)
+		case insensitivity for procedure NewResident()
+		fixed household members and related family (requestPending_confirm.php)
+ 		added title animation
+		added sorting (requestPending.php)
+
+
+--DECEMBER 23, 2015 10:40 PM --
+		BUGS: if limit > 1, 1st item is automatically selected | Trailing whitespace on autofill
+		NOTE: add registered since on workbench
+
+		changed birth date type
+		changed weight type
+		current address with ajax implementation of autofill
+		added confirm password
+		finished members list
+		added sorting to members list
+		added autofill for household
+		regex for email 
+		approve, deny and viewprofile redirect to profile summary
+		implemented timeago in date of request (requestPending.php)
+		implemented stored procedure for new residency
+			procedure checks for existing household
+	  		appends existing household data to new resident
+			likewise for new household
+ 		impletended stored function to return rID based on name, mname, lname, and uname 
