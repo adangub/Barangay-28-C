@@ -4,17 +4,17 @@
 	
 	<link rel="icon" type="image/png" href="/img/favicon.png" />
 
-	<script src="/js/everythingvalidation.js" type="text/javascript"></script>
+	<script src="js/everythingvalidation.js" type="text/javascript"></script>
 	<meta charset="UTF-8">
 	<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 	<meta name="description" content="Developed By M Abdur Rokib Promy">
 	<meta name="keywords" content="Admin, Bootstrap 3, Template, Theme, Responsive">
 	<!-- bootstrap 3.0.2 -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<!-- font Awesome -->
-	<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<!-- Ionicons -->
-	<link href="/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
 	
 	<!--<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>-->
 	<!-- Theme style -->
@@ -27,10 +27,10 @@
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 		
-	<link href='/css/fullcalendar.css' rel='stylesheet' />
-	<link href='/css/fullcalendar.print.css' rel='stylesheet' media='print' />
-	<script src='/js/moment.min.js'></script>
-	<script src='/js/fullcalendar.min.js'></script>	
+	<link href='css/fullcalendar.css' rel='stylesheet' />
+	<link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<script src='js/moment.min.js'></script>
+	<script src='js/fullcalendar.min.js'></script>	
 	
 		
     </head>

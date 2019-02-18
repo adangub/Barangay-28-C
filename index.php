@@ -124,9 +124,9 @@
 					$date = date_create($date);
 					$date = date_format($date, 'F j Y');
 					?>
-					<div style="min-height: 150px; width: 70%; padding: 3%; border: solid 0px #dbdbdb" class="">
+					<div style="width: 70%; padding: 1%; border: solid 0px #dbdbdb" class="">
 						<p align="justify"><?php echo $content ?></p>
-						<div style="width: 200px; margin-right: -720px"><h6>
+						<div style="width: 285px; margin-right: -720px"><h6>
 						<p class="help-block" style="text-align:right; margin:0"><?php echo $rows['name']; ?></p>
 						<p class="help-block" style="text-align:right; margin:0"><abbr class="timeago" style="text-align:right" title="<?php echo $rows['date']; ?>"></abbr></p>
 						</h6>
@@ -148,7 +148,7 @@
 				</div>
 				
 				<div id="eventstab" style="display:none">
-					<div class="panel-body" id="noti-box2">
+					<div class="panel-body" style="height:1000px; width: 30%">
 						<?php
 							if(isset($_COOKIE['ux']) && $_COOKIE['ux'] === session_id()):
 								$uID = $_SESSION['u_id'];
@@ -278,12 +278,12 @@
 					
                     
 					</div>
-					   <form name="newParticipants" method="post" action="/success/newParticipants.php">
+					   <form name="newParticipants" method="post" action="success/newParticipants.php">
 							<input type="hidden" name="programID" id="programID" value="">
 							<input type="hidden" name="uID" id="uID" value="">
 						</form>
 
-						<form name="deleteParticipant" method="post" action="/success/deleteParticipants.php">
+						<form name="deleteParticipant" method="post" action="success/deleteParticipants.php">
 							<input type="hidden" name="programID" id="programID" value="">
 							<input type="hidden" name="uID" id="uID" value="">
 						</form>

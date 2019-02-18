@@ -96,13 +96,13 @@
 													<?php 
 														if($image != NULL)
 														{	echo "<table><tr>";
-															echo "<img src = '/img/user/".$image."' style='border-radius: 8px 8px 8px 8px; border-width: 3px; margin-left: 0px; cursor: pointer; cursor: hand;' id='profilepic'/>";
+															echo "<img src = 'img/user/".$image."' style='border-radius: 8px 8px 8px 8px; border-width: 3px; margin-left: 0px; cursor: pointer; cursor: hand;' id='profilepic'/>";
 															echo "</tr></table>";
 														}
 														else
 														{
 															?>
-															<img src = '/img/default.jpg'  style='border-style: groove; margin-left: 0px; width: 200px; height: 200px; cursor: pointer; cursor: hand;' id='profilepic'/>
+															<img src = 'img/default.jpg'  style='border-style: groove; margin-left: 0px; width: 200px; height: 200px; cursor: pointer; cursor: hand;' id='profilepic'/>
 															<?php
 														}
 														?>
@@ -167,7 +167,7 @@
 													</tr>
 													<tr>
 														<div class="form-group">
-															<label class="col-lg-3 col-sm-3 control-label">Current City:</label>
+															<label class="col-lg-3 col-sm-3 control-label">Current Street:</label>
 																<p class="form-control-static"><?php echo $currentcity; ?></p>
 														</div>
 													</tr>

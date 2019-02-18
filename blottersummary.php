@@ -236,6 +236,8 @@
 											{
 												$lups1 = $row['lups1'];
 												$lups2 = $row['lups2'];
+												$schedule_date = $row['schedule_date'];
+												$end_time = $row['end_time'];
 												if($hearings < 3)
 													echo "<center><hr><h6>Hearing Number ".$hearings."</h6><hr></center>"; 
 												else echo "<center style='color:red'><hr><h6>Hearing Number ".$hearings."</h6><hr></center>"; 
@@ -243,33 +245,27 @@
 												<!--<img src="/img/seal.png" style="float:left; width:150px; height:150px; margin-left: 20px;"/>-->
 												<table style="margin-left: 50px;">	
 													<tr>
-														<div class="form-group" style="margin-left: 30%;">
-															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -25%;">Schedule #:</label>
+														<div class="form-group" style="margin-left: 10%;">
+															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -50%;">Schedule #:</label>
 																<p class="form-control-static"> <?php echo $hearings; ?></p>
 														</div>
 													</tr>
 													<tr>
-														<div class="form-group" style="margin-left: 30%;">
-															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -25%;">Hearing Number:</label>
+														<div class="form-group" style="margin-left: 10%;">
+															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -50%;">Hearing Number:</label>
 																<p class="form-control-static"> <?php echo $row['hearingID']; ?></p>
 														</div>
 													</tr>
 													<tr>
-														<div class="form-group" style="margin-left: 30%;">
-															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -25%;">Date:</label>
-																<p class="form-control-static"> <?php echo " <abbr class='timeago' title='".$row['schedule_date'].' '.$row['end_time']."'></abbr>"; ?></p>
+														<div class="form-group" style="margin-left: 10%;">
+															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -50%;">Date:</label>
+																<p class="form-control-static"> <?php echo $schedule_date; ?></p>
 														</div>
 													</tr>
 													<tr>
-														<div class="form-group" style="margin-left: 30%;">
-															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -25%;">Start/End Time:</label>
+														<div class="form-group" style="margin-left: 10%;">
+															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -50%;">Start/End Time:</label>
 																<p class="form-control-static"> <?php echo date("g:i a", strtotime($row['start_time']))." - ".date("g:i a", strtotime($row['end_time'])); ?></p>
-														</div>
-													</tr>
-													<tr>
-														<div class="form-group" style="margin-left: 30%;">
-															<label class="col-lg-8 control-label" style="margin-left: 3%; margin-bottom: 0px; margin-right: -25%;">Respondents:</label>
-																<p class="form-control-static"> All </p>
 														</div>
 													</tr>
 

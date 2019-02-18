@@ -46,7 +46,7 @@
 						$t_el = 0;
 
 
-
+					/**
 					if($t_el == 0)
 					{
 						?>
@@ -80,7 +80,7 @@
 					}
 					
 					else
-					{
+					{**/
 					?>
 								
 						<div class="row">
@@ -266,7 +266,7 @@
 						</div>
 					
 					<?php 
-					}
+					//}
 					mysqli_close($conn);
 					?>
 					
